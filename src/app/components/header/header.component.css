@@ -1,0 +1,13 @@
+.header {
+    width: 100%;
+}
+
+.header .navbar {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.activeLove {
+    background-color: rgb(255, 117, 140);
+    color: white;
+}
