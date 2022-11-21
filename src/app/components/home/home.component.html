@@ -1,6 +1,6 @@
 <section class="section">
     <h2>Куда пойдем: ...в Кафе?</h2>
-    <!-- <button type="button" class="btn btn-primary">Погнали</button> -->
 
-    <app-post></app-post>
+    <app-post [post]="post" *ngIf="isShowPost"></app-post>
+    <button type="button" class="btn btn-primary" style="width: 80%; margin: 20px 0;" (click)="showPost()">Погнали</button>
 </section>
