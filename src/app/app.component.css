@@ -1,7 +1,4 @@
-.main {
-    width: 100%;
-    margin: 0 auto;
-    background-color: #FBFBFB;
-    padding: 20px 0;
+main {
+    background-color: rgb(253, 253, 253);
 }
 

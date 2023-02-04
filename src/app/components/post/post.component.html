@@ -1,0 +1,19 @@
+<article class="mt-4 mb-4 w-100">
+    <div class="col-lg-9 m-auto">
+        <div class="card mb-4">
+            <a [href]="post.link" target="_blank"><img class="card-img-top" style="height: 50vh; object-fit: cover;"
+                    [src]="post.img" [alt]="post.title"></a>
+            <div class="card-body mt-3 mb-3 ps-5 pe-5">
+                <div class="small text-muted">Когда начнется: {{ post.date }}</div>
+
+                <h2 class="card-title display-6 fw-bolder mt-3">{{post.title}}</h2>
+                <p class="card-text" style="width: 90%;">{{post.description}}</p>
+                <a class="btn btn-primary" [href]="post.link" target="_blank">Перейдем по ссылочке</a>
+                <img src="../../../assets/noHeart.svg" alt="heart" style="width: 40px; height: auto; cursor: pointer;"  class="ms-3"
+                    (click)="addLoveUser()" *ngIf="!post.isLove">
+                <img src="../../../assets/heart.svg" alt="heart" style="width: 40px; height: auto; cursor: pointer;"  class="ms-3"
+                    (click)="removeNoLoveUser()" *ngIf="post.isLove">
+            </div>
+        </div>
+    </div>
+</article>

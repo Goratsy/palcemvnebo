@@ -1,6 +1,47 @@
-<section class="section">
-    <h2>Куда пойдем: ...в Кафе?</h2>
+<section class="display-block pt-5 pb-5">
 
-    <app-post [post]="post" *ngIf="isShowPost"></app-post>
-    <button type="button" class="btn btn-primary" style="width: 80%; margin: 20px 0;" (click)="showPost()">Погнали</button>
+
+    <div class="border-top border-bottom" *ngIf="!isShowPost">
+        <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-6">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5675/5675951.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
+                        width="700" height="500" loading="lazy">
+                </div>
+                <div class="col-lg-6">
+                    <h1 class="display-5 fw-bold lh-1 mb-3">Тыкни польцем в небо!</h1>
+                    <p class="lead">Испытайте удачу и найдите самые незабываемые мероприятия в своей жизни! Создавайте
+                        собственные мероприятия, заполнив маленькую форму для пользователей.</p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <a href="#events" class="btn btn-primary btn-lg px-4 me-md-2">Мероприятия</a>
+                        <a routerLink="/create-event" class="btn btn-outline-secondary btn-lg px-4">Создать</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container w-100 mt-5" id="events">
+        <div class="row">
+            <div class="text-center d-flex justify-content-center align-items-center flex-column">
+                <h2 class="fw-bold display-6">Куда пойдем?</h2>
+                <p class="display-7 fw-medium mt-3 mb-3 w-50 bg-blue">
+                    Нажав на кнопку, вы откроете для себя интересное мероприятие. Если оно вам не понравилось, тогда нажмите на кнопку «Заново»
+                </p>
+            </div>
+            <div class="col d-flex flex-column justify-content-center align-items-center">
+                <app-post [post]="post" *ngIf="isShowPost"></app-post>
+                <button type="button" class="btn btn-danger btn-lg"
+                    (click)="showPost()" *ngIf="!isShowPost">
+                    Искать
+                </button>
+
+                <button type="button" class="btn btn-primary btn-lg"
+                    (click)="showPost()" *ngIf="isShowPost">
+                    Заново!
+                </button>
+            </div>
+        </div>
+    </div>
+
 </section>

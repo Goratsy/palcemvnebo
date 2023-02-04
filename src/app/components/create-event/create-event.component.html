@@ -1,1 +1,70 @@
-<p>create-event works!</p>
+<section class="pt-5 pb-5">
+    <div class="container-fluid container-md">
+
+        <form [formGroup]="formEvent">
+            <div class="row d-flex">
+                <div class="col-12">
+                    <h3 class="">Ваши данные:</h3>
+                </div>
+                <div class="col-6">
+                    <input class="form-control" type="text" placeholder="Имя*" aria-label="default input" id="nameUser"
+                        formControlName="nameUser">
+                </div>
+                <div class="col-6">
+                    <input class="form-control" type="email" placeholder="Email*" aria-label="default input"
+                        id="emailUser" formControlName="emailUser">
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-12">
+                    <h3>Данные мероприятия:</h3>
+                </div>
+                <div class="col-6 ">
+                    <input class="form-control" type="text" placeholder="Заголовок*" aria-label="default input"
+                        id="titleEvent" formControlName="title">
+                </div>
+                <div class="col-6 ">
+                    <!-- <input class="form-control" type="file" accept=".png, .jpg, .jpeg"
+                        aria-label="default input" id="imgEvent" formControlName="img"> -->
+                    <input class="form-control" type="text" placeholder="Ссылка на изображение URL*"
+                    aria-label="default input" id="imgEvent" formControlName="img" >
+                </div>
+                <div class="col-6 mt-3">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Описание*" id="descriptionEvent" formControlName="description"></textarea>
+                        <label for="descriptionEvent" class="text-secondary">Описание*</label>
+                    </div>
+                </div>
+                <div class="col-6 mt-3">
+                    <input class="form-control" type="date" aria-label="default input" id="dateEvent" formControlName="date">
+                    <label for="dateEvent" class="form-label text-secondary">Если мероприятие не имеет точной даты, то оставьте поле пустым</label>
+                </div>
+                <div class="col-6 mt-3">
+                    <input class="form-control" type="text" aria-label="default input"
+                        placeholder="Ссылка на мепроприятие*" id="linkEvent" formControlName="link">
+                </div>
+                <div class="col-6 mt-3">
+                    <button type="button" class="btn btn-primary" (click)="showCreatingPost()">Показать
+                        мероприяие</button>
+                </div>
+                <div class="col-12">
+                    <app-post *ngIf="isShowCreatingPost"></app-post>
+                </div>
+                <div class=" mt-5 d-flex justify-content-center align-items-center" role="alert" *ngIf="formEvent.invalid">
+                    <div class="w-75 alert alert-danger text-center">
+                        Заполните все поля со звездочкой, либо проверьте валидность полей.
+                    </div>
+                </div>
+                <div class="col-12 d-flex justify-content-center mt-3">
+                    <button class="btn btn-dark btn-lg w-md-25" type="submit"
+                        (click)="sumbitFormEvent()" [disabled]="formEvent.invalid">Отправить</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="container">
+
+    </div>
+</section>

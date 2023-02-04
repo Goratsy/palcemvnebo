@@ -9,9 +9,10 @@ import { LovesComponent } from './components/loves/loves.component';
 import { CreateEventComponent } from './components/create-event/create-event.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HomeComponent } from './components/home/home.component';
-import { PostComponent } from './components/home/post/post.component';
+import { PostComponent } from './components/post/post.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PostsService } from './servises/posts.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -28,7 +29,8 @@ import { PostsService } from './servises/posts.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [PostsService],
   bootstrap: [AppComponent]

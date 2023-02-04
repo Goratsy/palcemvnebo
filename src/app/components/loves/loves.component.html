@@ -1,1 +1,11 @@
-<p>loves works!</p>
+<section class="loves">
+    <h2 class="fw-bold display-6">Ваши любимейшие мероприятия</h2>
+
+    <div *ngIf="isLovePosts; then LovePosts; else NoLovePosts"></div>
+    <ng-template #LovePosts>
+        <app-post [post]="post" *ngFor="let post of allPosts"></app-post>
+    </ng-template>
+    <ng-template #NoLovePosts>
+        <p class="display-7 text-center mb-5 mt-5">Вы еще не добавили ваши любимые мероприятия!</p>
+    </ng-template>
+</section>

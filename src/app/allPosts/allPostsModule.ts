@@ -5,4 +5,5 @@ export interface IAllPosts {
     title: string, 
     description: string,
     link: string,
+    isLove: boolean,
 }

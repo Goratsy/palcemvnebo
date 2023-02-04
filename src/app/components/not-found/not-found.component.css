@@ -1,0 +1,18 @@
+
+
+.link {
+    text-decoration: none;
+    transition: all 200ms;
+}
+
+.link:hover {
+    color:  #004D7B;
+}
+
+.link:active::before {
+    content: '→ ';
+}
+
+.link:active::after {
+    content: ' ←';
+}
